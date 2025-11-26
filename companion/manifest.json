@@ -1,0 +1,22 @@
+{
+	"$schema": "../node_modules/@companion-surface/base/assets/manifest.schema.json",
+	"type": "surface",
+	"id": "mirabox-stream-dock",
+	"name": "Mirabox Stream Dock",
+	"shortname": "mirabox-stream-dock",
+	"description": "",
+	"version": "0.0.0",
+	"license": "MIT",
+	"repository": "git+https://github.com/bitfocus/companion-surface-mirabox-stream-dock.git",
+	"bugs": "https://github.com/bitfocus/companion-surface-mirabox-stream-dock/issues",
+	"maintainers": [{ "name": "Julian Waller", "email": "git@julusian.co.uk" }],
+	"runtime": { "type": "node22", "apiVersion": "0.0.0", "entrypoint": "../dist/main.js" },
+	"keywords": ["mirabox", "stream dock", "streamdock"],
+	"products": ["Mirabox Stream Dock"],
+	"usbIds": [
+		{ "vendorId": 26115, "productIds": [4101, 4102, 4103, 4099, 4116] },
+		{ "vendorId": 26114, "productIds": [4097, 4099, 4116] },
+		{ "vendorId": 21832, "productIds": [26224] },
+		{ "vendorId": 5376, "productIds": [12291] }
+	]
+}
