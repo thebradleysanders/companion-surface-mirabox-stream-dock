@@ -16,7 +16,7 @@
 	"usbIds": [
 		{ "vendorId": 26115, "productIds": [4101, 4102, 4103, 4099, 4116] },
 		{ "vendorId": 26114, "productIds": [4097, 4099, 4116] },
-		{ "vendorId": 21832, "productIds": [26224] },
+		{ "vendorId": 21832, "productIds": [4097, 26224] },
 		{ "vendorId": 5376, "productIds": [12291] }
 	]
 }
