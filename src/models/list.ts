@@ -4,8 +4,8 @@ import { N4_1245Definition } from './N4-1245.js'
 import { N4_1234Definition } from './N4-1234.js'
 import { N3_293N3Definition } from './N3-293N3.js'
 import { HSV_293SDefinition } from './HSV-293S.js'
-import { HSV_293S_3Definition } from './N3-293N3-3.js'
-import { HSV_293S_2Definition } from './N3-293N3-2.js'
+import { HSV_293S_3Definition } from './HSV-293S-3.js'
+import { HSV_293S_2Definition } from './HSV-293S-2.js'
 
 export interface StreamDockModelDefinition {
 	productName: string
