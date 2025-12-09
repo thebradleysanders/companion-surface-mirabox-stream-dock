@@ -6,6 +6,7 @@ import { N3_293N3Definition } from './N3-293N3.js'
 import { HSV_293SDefinition } from './HSV-293S.js'
 import { HSV_293S_3Definition } from './HSV-293S-3.js'
 import { HSV_293S_2Definition } from './HSV-293S-2.js'
+import { M18V3Definition } from './M18V3.js'
 
 export interface StreamDockModelDefinition {
 	productName: string
@@ -42,4 +43,5 @@ export const AllModels: StreamDockModelDefinition[] = [
 	HSV_293SDefinition,
 	HSV_293S_2Definition,
 	HSV_293S_3Definition,
+	M18V3Definition,
 ]
