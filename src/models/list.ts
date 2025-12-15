@@ -7,6 +7,7 @@ import { HSV_293SDefinition } from './HSV-293S.js'
 import { HSV_293S_3Definition } from './HSV-293S-3.js'
 import { HSV_293S_2Definition } from './HSV-293S-2.js'
 import { M18V3Definition } from './M18V3.js'
+import { Ajaz_AKP153Definition } from './Ajazz-AKP153.js'
 
 export interface StreamDockModelDefinition {
 	productName: string
@@ -44,4 +45,5 @@ export const AllModels: StreamDockModelDefinition[] = [
 	HSV_293S_2Definition,
 	HSV_293S_3Definition,
 	M18V3Definition,
+	Ajaz_AKP153Definition,
 ]
