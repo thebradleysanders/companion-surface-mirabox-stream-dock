@@ -9,10 +9,11 @@ import {
 	HIDDevice,
 } from '@companion-surface/base'
 import { setTimeout } from 'node:timers/promises'
-import { getControlId } from './util.js'
+import { getControlId, translateRotation } from './util.js'
 import { StreamDock } from './streamdock.js'
 import type { HIDAsync } from 'node-hid'
 import type { StreamDockModelDefinition } from './models/list.js'
+import * as imageRs from '@julusian/image-rs'
 
 export class MiraboxWrapper implements SurfaceInstance {
 	readonly #logger: ModuleLogger
@@ -95,12 +96,38 @@ export class MiraboxWrapper implements SurfaceInstance {
 				return
 			}
 
+			const imageRsRotation = translateRotation(this.#streamDock.iconRotation)
+
+			let rotatedBitmap = drawProps.image
+			if (imageRsRotation) {
+				let image = imageRs.ImageTransformer.fromBuffer(
+					drawProps.image,
+					output.resolutionx,
+					output.resolutiony,
+					'rgb',
+				).rotate(imageRsRotation)
+
+				// pad, in case a button is non-square
+				const dimensions = image.getCurrentDimensions()
+				const xOffset = (output.resolutionx - dimensions.width) / 2
+				const yOffset = (output.resolutiony - dimensions.height) / 2
+				image = image.pad(Math.floor(xOffset), Math.ceil(xOffset), Math.floor(yOffset), Math.ceil(yOffset), {
+					red: 0,
+					green: 0,
+					blue: 0,
+					alpha: 255,
+				})
+
+				const computedImage = await image.toBuffer('rgb')
+				rotatedBitmap = computedImage.buffer
+			}
+
 			const maxAttempts = 3
 			for (let attempts = 1; attempts <= maxAttempts; attempts++) {
 				try {
 					if (signal.aborted) return
 
-					await this.#streamDock.setKeyImage(output.column, output.row, Buffer.from(drawProps.image))
+					await this.#streamDock.setKeyImage(output.column, output.row, Buffer.from(rotatedBitmap))
 					return
 				} catch (e) {
 					if (signal.aborted) return

@@ -447,6 +447,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@julusian/image-rs@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "@julusian/image-rs@npm:2.1.1"
+  checksum: 10c0/dfc898334e322eaedaab2b970f787cb5ddb8fec6743806918b5517677b36352cd73f7476e4a6738c85b045ba37493162f34c3d06b9ffdda0fdfc625bae7203df
+  languageName: node
+  linkType: hard
+
 "@julusian/jpeg-turbo@npm:^2.3.0":
   version: 2.3.0
   resolution: "@julusian/jpeg-turbo@npm:2.3.0"
@@ -1350,6 +1357,7 @@ __metadata:
   dependencies:
     "@companion-module/tools": "npm:^2.5.0"
     "@companion-surface/base": "npm:~1.0.0"
+    "@julusian/image-rs": "npm:^2.1.1"
     "@julusian/jpeg-turbo": "npm:^2.3.0"
     "@types/node": "npm:^22.19.3"
     "@types/semver": "npm:^7.7.1"
