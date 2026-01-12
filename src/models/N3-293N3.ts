@@ -7,7 +7,7 @@ export const N3_293N3Definition: StreamDockModelDefinition = {
 		// TODO: verify these
 		{
 			vendorId: 0x6602,
-			productIds: [0x1003],
+			productIds: [0x1002],
 		},
 		{
 			vendorId: 0x6603,
